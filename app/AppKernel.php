@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new OnlineAdv\InvoiceBundle\InvoiceBundle(),
             new OnlineAdv\UsersBundle\UsersBundle(),
+            new Liip\ImagineBundle\LiipImagineBundle(),
+            new OnlineAdv\CMSBundle\CMSBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'), true)) {

@@ -1,0 +1,5 @@
+<h1>HTML email</h1>
+{% autoescape false %}
+    {{ 'registration.email.message'|trans({'%username%': user.username, '%confirmationUrl%': confirmationUrl}, 'FOSUserBundle') }}
+{% endautoescape %}
+
