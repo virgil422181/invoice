@@ -16,7 +16,11 @@ security:
             pattern: ^/
             form_login:
                 provider: fos_userbundle
-                csrf_provider: security.csrf.token_manager # Use form.csrf_provider instead for Symfony <2.4
+                csrf_provider: form.csrf_provider # Use form.csrf_provider instead for Symfony <2.4
+                check_path:     fos_user_security_check
+                failure_path:   fos_user_security_login
+                default_target_path: fos_user_profile_show
+                always_use_default_target_path: true
             logout:       true
             anonymous:    true
 

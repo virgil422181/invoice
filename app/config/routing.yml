@@ -4,11 +4,11 @@ cms:
 
 users:
     resource: "@UsersBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /user
 
 invoice:
     resource: "@InvoiceBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /factura
 
 _liip_imagine:
     resource: "@LiipImagineBundle/Resources/config/routing.xml"
