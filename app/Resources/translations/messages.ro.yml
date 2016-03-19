@@ -1,0 +1,11 @@
+#header
+header:
+  slogan: Proiect in Symfony
+
+menu:
+  home: Acasa
+  users: Utilizatori
+  categories: Categorii
+  pages: Pagini
+
+#home page

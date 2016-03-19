@@ -1,0 +1,11 @@
+#header
+header:
+  slogan: A Symfony Project
+
+menu:
+  home: Home
+  users: Users
+  categories: Categories
+  pages: Pages
+
+#home page

@@ -59,10 +59,13 @@ registration:
             Regards,
             the Team.
     form_fields:
+        firstname: First Name
+        lastname: Last Name
         username: Enter your username
         email: Enter your email address
         password: Enter your password
         confirm_password: Confirm your password
+    confirmed_email: Confirm your request
 
 # Password resetting
 resetting:
@@ -96,6 +99,8 @@ layout:
 # Form field labels
 form:
     group_name: "Group name:"
+    firstname: "First Name:"
+    lastname: "Last Name:"
     username: "Username:"
     email: "Email:"
     current_password: "Current password:"

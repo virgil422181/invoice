@@ -60,10 +60,13 @@ registration:
             Toate cele bune,
             Echipa
     form_fields:
-        username: Introduceti numele de utilizator
-        email: Introduceti adresa de email
-        password: Introduceti parola
-        confirm_password: Confirmati parola
+        firstname:  Prenume
+        lastname:   Nume
+        username:   Introduceti numele de utilizator
+        email:  Introduceti adresa de email
+        password:   Introduceti parola
+        confirm_password:   Confirmati parola
+    confirmed_email:    Confirma inregistrarea
 
 # Password resetting
 resetting:

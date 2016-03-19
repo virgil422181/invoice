@@ -1,10 +1,32 @@
 {% extends "UsersBundle::login_form_layout.html.twig" %}
+{% block title %}
+    {{ 'layout.register'|trans({}, 'FOSUserBundle') }}
+{% endblock %}
+
+
 {% block security_login_panel_title %}
     {{ 'registration.form_title'|trans({}, 'FOSUserBundle') }}
 {% endblock %}
 
 {% block security_login_form %}
     <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+        {% if form_errors(form) %}
+            <div id="login-alert" class="alert alert-danger col-sm-12">
+                {{ form_errors(form) }}
+            </div>
+        {% endif %}
+            <div class="col-md-6">
+                <div style="margin-bottom: 25px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    {{ form_widget(form.firstName, { 'attr': {'class': 'form-control', 'placeholder': ('registration.form_fields.firstname'|trans({}, 'FOSUserBundle'))} }) }}
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div style="margin-bottom: 25px" class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    {{ form_widget(form.lastName, { 'attr': {'class': 'form-control', 'placeholder': ('registration.form_fields.lastname'|trans({}, 'FOSUserBundle'))} }) }}
+                </div>
+            </div>
 
         <div style="margin-bottom: 25px" class="input-group">
             <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
@@ -24,6 +46,10 @@
             <span class="input-group-addon"><i class="fa fa-unlock-alt"></i></span>
             {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-control', 'placeholder': ('registration.form_fields.confirm_password'|trans({}, 'FOSUserBundle'))} }) }}
         </div>
+
+        {# Render all remaining fields #}
+        {{ form_rest(form) }}
+
         <div>
             <input type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-success" />
         </div>

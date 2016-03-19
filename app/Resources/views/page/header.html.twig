@@ -10,7 +10,7 @@
                 </div>
                 <!-- name-and-slogan -->
                 <div class="site-slogan">
-                    Multipurpose HTML5 Template
+                    {{ 'header.slogan'|trans({},'messages') }}
                 </div>
 
             </div>
@@ -18,13 +18,13 @@
         </div>
         <div class="col-md-9">
             <ul class="nav navbar-nav ">
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ path('cms_homepage') }}">{{ 'menu.home'|trans }}</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
-                    <li><a href="#">Users</a> |</li>
-                    <li><a href="#">Categories</a> |</li>
-                    <li><a href="#">Pages</a> |</li>
+                    <li><a href="{{ path('cms_homepage') }}">{{ 'menu.users'|trans }}</a></li>
+                    <li><a href="{{ path('cms_homepage') }}">{{ 'menu.categories'|trans }}</a></li>
+                    <li><a href="{{ path('cms_homepage') }}">{{ 'menu.pages'|trans }}</a></li>
                 {% elseif is_granted('ROLE_USER') %}
-                    <li><a href="#">Pages</a> |</li>
+                    <li><a href="{{ path('cms_homepage') }}">{{ 'menu.pages'|trans }}</a></li>
                 {% endif %}
                 {% if is_granted('ROLE_ADMIN') or is_granted('ROLE_USER') %}
                     <li><a href="{{ path('fos_user_security_logout') }}">{{ 'layout.logout'|trans({}, 'FOSUserBundle') }}</a></li>

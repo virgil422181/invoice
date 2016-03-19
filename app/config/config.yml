@@ -72,11 +72,15 @@ fos_user:
     registration:
         confirmation:
             enabled: true
+        form:
+            type: OnlineAdv\UsersBundle\Form\RegistrationType
     from_email:
         address:        "%mailer_user%"
         sender_name:    Invoice
     service:
         mailer: fos_user.mailer.twig_swift
+    group:
+        group_class: FOS\UserBundle\Entity\Group
 
 liip_imagine:
     resolvers:

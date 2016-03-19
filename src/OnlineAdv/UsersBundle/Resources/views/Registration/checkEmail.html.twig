@@ -1,0 +1,13 @@
+{% extends "UsersBundle::login_form_layout.html.twig" %}
+{% block title %}
+    {{ 'layout.register'|trans({}, 'FOSUserBundle') }}
+{% endblock %}
+
+
+{% block security_login_panel_title %}
+    {{ 'registration.confirmed_email'|trans({}, 'FOSUserBundle') }}
+{% endblock %}
+
+{% block security_login_form %}
+    <p>{{ 'registration.check_email'|trans({'%email%': user.email}, 'FOSUserBundle') }}</p>
+{% endblock %}
