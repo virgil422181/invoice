@@ -53,6 +53,12 @@ class User extends BaseUser
      */
     protected $lastName;
 
+    /*
+    * @ORM\ManyToOne(targetEntity="OnlineAdv\InvoiceBundle\Entity\Company", inversedBy="users")
+    * @ORM\JoinColumn(name="company_id", referencedColumnName="id")
+    */
+    protected $company;
+
 
     public function __construct()
     {

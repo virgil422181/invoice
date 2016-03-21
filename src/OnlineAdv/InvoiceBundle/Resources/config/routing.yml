@@ -1,3 +1,7 @@
+invoice_company:
+    resource: "@InvoiceBundle/Resources/config/routing/company.yml"
+    prefix:   /company
+
 invoice_homepage:
     path:     /
     defaults: { _controller: InvoiceBundle:Default:index }
